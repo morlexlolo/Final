@@ -6,13 +6,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>AdminLTE 3 | Starter</title>
+  <title>Junub | Edu</title>
 
  <link rel="stylesheet" href="/css/app.css">
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="wrapper">
+<div class="wrapper" id="app">
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
@@ -63,38 +64,38 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
         <li class="nav-item">
-            <a href="#" class="nav-link">
+            <router-link to="/dashboard" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
               Dashboard
               </p>
-            </a>
+            </router-link>
          </li>
 
 
 
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <router-link to="/profile" class="nav-link">
              <i class=" nav-icon fas fa-user-circle"></i>
               <p>
               Profile
               </p>
-            </a>
+            </router-link>
          </li>
 
 
           <li class="nav-item has-treeview menu">
-            <a href="#" class="nav-link active">
+            <router-link to="/example" class="nav-link">
              <i class="nav-icon fas fa-cog"></i>
               <p>
                 Management
                 <i class="right fa fa-angle-left"></i>
               </p>
-            </a>
+            </router-link>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="#" class="nav-link ">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Active Page</p>
                 </a>
@@ -122,6 +123,22 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+
+
+  <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <router-view></router-view>
+
+
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
@@ -133,6 +150,6 @@
 </div>
 <!-- ./wrapper -->
 
-<script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
+<script type="text/javascript" src="/js/app.js"></script>
 </body>
 </html>
